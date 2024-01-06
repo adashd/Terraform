@@ -59,6 +59,7 @@ resource "aws_instance" "b-host" {
   instance_type = "t2.micro"
   key_name = aws_key_pair.key1.id
   subnet_id = aws_subnet.pub-sub.id
+  security_groups = [aws_security_group.sg.id]
   tags = {
     Name = "Terraform-ec2"
   }
